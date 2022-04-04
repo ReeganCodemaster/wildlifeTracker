@@ -1,4 +1,4 @@
-<%= form_with model: [animal, animal.sightings.build ] do |form|%>
+<%= form_with model: [@animal, @animal.sightings.build ] do |form|%>
     <div>
         <%= form.label :date %><br/>
         <%= form.date_field :date %>
