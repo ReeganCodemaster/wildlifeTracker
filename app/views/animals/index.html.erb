@@ -1,4 +1,6 @@
-<h1>Animals<h1>
+<h1>Animals</h1>
 <% @animals.each do |animal|%>
     <%= link_to animal.animal, animal%>
 <% end %>
+
+<%= link_to "add a new animal", new_animal_path%>
