@@ -1,2 +1,15 @@
 <%= form_with model: [animal, animal.sightings.build ] do |form|%>
+    <div>
+        <%= form.label :date %><br/>
+        <%= form.date_field :date %>
+    </div>
+        <%= form.label :longitude %><br/>
+        <%= form.number_field :longitude %>
+    <div>
+    </div>
+        <%= form.label :latitude %><br/>
+        <%= form.number_field :latitude %>
+    <div>
+        <%= form.submit %>
+    </div>
 <%end%>
