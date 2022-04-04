@@ -4,4 +4,12 @@
         <strong> longitude: <%= sighting.longitude %> </strong><br/>
         <strong> latitude: <%= sighting.latitude %> </strong><br/>
     </p>
+    <ul>   
+        <li>
+            <%= link_to "Delete sighting",[sighting.animal, sighting],data:{
+                turbo_method:"delete",
+                turb_confirm:"Are you sure?"
+            } %>
+        </li>
+    </ul>
 </li>
