@@ -26,7 +26,7 @@ class AnimalsController < ApplicationController
     end
 
     def update
-        @animal = Animal.find(parms[:id])
+        @animal = Animal.find(params[:id])
 
         if @animal.update(animal_params)
             redirect_to @animal
