@@ -1,2 +1,13 @@
 <h1><%= @animal.animal %></h1>
-<%= link_to "Edit animal name", edit_animal_path%>
+<ul>
+    <li>
+        <%= link_to "Edit animal name", edit_animal_path%>
+    </li>
+    <li>
+        <%= link_to "Delete animal", animal_path(@animal), data:{
+            turbo_method:"delete",
+            turbo_confirm:"Are you sure?"
+        }%>
+    </li>
+
+</ul>
