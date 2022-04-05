@@ -29,7 +29,7 @@ class SightingsController < ApplicationController
         redirect_to animal_path(@animal), status: 303
     end
 
-    def sigtingsBetween(startDate,endDate)
+    def sightingsBetween(startDate,endDate)
         @animals = Animal.where('date BETWEEN ' + startDate + 'AND' + enddate)
     end
 
