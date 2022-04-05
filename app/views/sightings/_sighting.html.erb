@@ -11,5 +11,10 @@
                 turb_confirm:"Are you sure?"
             } %>
         </li>
+        <li>
+            <%= link_to "Edit sighting", edit_animal_sighting_path(animal_id: @animal.id, id: sighting.id) %>
+        </li>
     </ul>
+
+
 </li>
