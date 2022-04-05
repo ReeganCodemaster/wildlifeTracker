@@ -30,15 +30,7 @@ class SightingsController < ApplicationController
     end
 
     def sigtingsBetween(startDate,endDate)
-        @animal = Animal.find(params[:animal_id])
-        @sightings = @animal.sightings.all
-        filteredSightings = []
-        @sightings.each do |sighting|
-            if (sighting.date > startDate) and (sighting.date < endDate)
-                filteredSightings.push(sighting)
-            end
-        end
-        filteredSightings
+        @animals = Animal.where('date BETWEEN ' + startDate + 'AND' + enddate)
     end
 
     private
