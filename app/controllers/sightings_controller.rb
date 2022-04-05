@@ -29,8 +29,20 @@ class SightingsController < ApplicationController
         redirect_to animal_path(@animal), status: 303
     end
 
+    def sigtingsBetween(startDate,endDate)
+        @animal = Animal.find(params[:animal_id])
+        @sightings = @animal.sightings.all
+        filteredSightings = []
+        @sightings.each do |sighting|
+            if (sighting.date > startDate) and (sighting.date < endDate)
+                filteredSightings.push(sighting)
+            end
+        end
+        filteredSightings
+    end
+
     private
-    def sightings_params()
+    def sightings_params
         params.require(:sighting).permit(:animal, :date, :longitude, :latitude)
     end
 end
