@@ -1,0 +1,20 @@
+<%= form_with model: [@animal, @sighting] do |form|%>
+    <% if @sighting.errors.any? %>
+        <% @sighting.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
+    <div>
+        <%= form.label :date %><br/>
+        <%= form.date_field :date %>
+    </div>
+        <%= form.label :longitude %><br/>
+        <%= form.number_field :longitude %>
+    <div>
+    </div>
+        <%= form.label :latitude %><br/>
+        <%= form.number_field :latitude %>
+    <div>
+        <%= form.submit %>
+    </div>
+<%end%>
