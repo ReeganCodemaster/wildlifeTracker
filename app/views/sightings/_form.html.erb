@@ -1,4 +1,9 @@
-<%= form_with model: [@animal, @animal.sightings.build ] do |form|%>
+<%= form_with model: [animal, sighting] do |form|%>
+    <% if @sighting.errors.any? %>
+        <% @sighting.errors.full_messages.each do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>
     <div>
         <%= form.label :date %><br/>
         <%= form.date_field :date %>
