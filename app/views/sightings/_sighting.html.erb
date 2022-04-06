@@ -12,7 +12,7 @@
             } %>
         </li>
         <li>
-            <%= link_to "Edit sighting", edit_animal_sighting_path(animal_id: @animal.id, id: sighting.id) %>
+            <%= link_to "Edit sighting", edit_animal_sighting_path(params[:id]) %>
         </li>
     </ul>
 
