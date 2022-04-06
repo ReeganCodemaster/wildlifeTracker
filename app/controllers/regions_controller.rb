@@ -17,8 +17,21 @@ class RegionsController < ApplicationController
         if @region.save
             redirect_to @region
         else
-            redirect_to :new, status: :unprocessable_entity
+            render :new, status: :unprocessable_entity
         end
+    end
+
+    def edit
+        @region = Region.find(params[:id])
+    end
+
+    def update
+        @region = Region.find(params[:id])
+
+        if region.update(region_params)
+            redirect_to @region
+        else 
+            render :edit , status: :unprocessable_entity 
     end
 
     private
