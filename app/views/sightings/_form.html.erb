@@ -7,17 +7,38 @@
     <div>
         <%= form.label :date %><br/>
         <%= form.date_field :date %>
+        <ul>
+            <% sighting.errors.full_messages_for(:date).each do |message|%>
+                <li>
+                    message        
+                </li>
+            <% end %>
+        </ul>
     </div>
         <%= form.label :longitude %><br/>
         <%= form.number_field :longitude %>
+        <ul>
+            <% sighting.errors.full_messages_for(:longitude).each do |message|%>
+                <li>
+                    message        
+                </li>
+            <% end %>
+        </ul>
     <div>
     </div>
         <%= form.label :latitude %><br/>
         <%= form.number_field :latitude %>
     <div>
     </div>
-        <%= form.label :region %><br/>
-        <%= form.select :region, Region.pluck(:region) %>
+        <%= form.label :region_id %><br/>
+        <%= form.select :region_id, Region.pluck(:region, :id) %>
+        <ul>
+            <% sighting.errors.full_messages_for(:region_id).each do |message|%>
+                <li>
+                    message        
+                </li>
+            <% end %>
+        </ul>
     <div>
         <%= form.submit %>
     </div>
