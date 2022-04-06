@@ -14,7 +14,7 @@ class RegionsController < ApplicationController
     def create
         @region = Region.new(region_params)
         
-        if region.save
+        if @region.save
             redirect_to @region
         else
             redirect_to :new, status: :unprocessable_entity
