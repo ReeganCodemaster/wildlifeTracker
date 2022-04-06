@@ -1,32 +1,25 @@
 class SightingsController < ApplicationController
+    before_action :set_sighting, only: %i[show edit update destroy]
+    before_action :set_animal
+
     def new
-        @animal = Animal.find(params[:animal_id])
+        @animal   = Animal.find(params[:animal_id])
         @sighting = @animal.sightings.new()
-        @regions = Region.all
     end
 
     def create
-        @animal = Animal.find(params[:animal_id])
-        @sighting = @animal.sightings.new(sightings_params)
+        @sighting = Sighting.new(sightings_params.merge(animal_id: params[:animal_id]))
         
         if @sighting.save
             redirect_to animal_path(@animal)
         else 
-            redirect_to new_animal_sighting_path
+            render :new, status: :unprocessable_entity
         end
-    end
-
-    def edit
-        @animal = Animal.find(params[:animal_id])
-        @sighting = @animal.sightings.find(params[:id])
     end
 
     def update
         # if save works -> redirect the animal page
         # if save fails -> redirect the edit form
-        @animal = Animal.find(params[:animal_id])
-        @sighting = @animal.sightings.find(params[:id])
-
         if @sighting.update(sightings_params)
             redirect_to @animal
         else 
@@ -35,16 +28,22 @@ class SightingsController < ApplicationController
     end
 
     def destroy
-        @animal = Animal.find(params[:animal_id])
-        @sighting = @animal.sightings.find(params[:id])
-
         @sighting.destroy
         redirect_to animal_path(@animal), status: 303
     end
 
 
     private
+    
+    def set_sighting
+        @sighting = Sighting.find(params[:id])
+    end
+
+    def set_animal
+        @animal = Animal.find(params[:animal_id])
+    end
+
     def sightings_params
-        params.require(:sighting).permit(:animal, :date, :longitude, :latitude)
+        params.require(:sighting).permit(:animal, :date, :longitude, :latitude, :region_id)
     end
 end
