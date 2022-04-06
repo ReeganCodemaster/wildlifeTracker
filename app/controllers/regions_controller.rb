@@ -34,7 +34,13 @@ class RegionsController < ApplicationController
             render :edit , status: :unprocessable_entity 
         end
     end
+    
+    def destroy
+        @region = Region.find(params[:id])
+        @region.destroy
 
+        redirect_to "/regions", status: 303
+    end
     private
     def region_params
         params.require(:region).permit(:region)
