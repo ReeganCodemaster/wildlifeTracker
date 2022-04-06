@@ -32,6 +32,7 @@ class RegionsController < ApplicationController
             redirect_to @region
         else 
             render :edit , status: :unprocessable_entity 
+        end
     end
 
     private
