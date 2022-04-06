@@ -1,2 +1,12 @@
 <h1><%= @region.region %></h1>
-<%= link_to "Edit region", edit_region_path%>
+<ul>
+    <li>
+        <%= link_to "Edit region", edit_region_path%>
+    </li>
+    <li>
+        <%= link_to "Delete region", region_path(@region), data:{
+            turbo_method:"delete",
+            turbo_confirm:"Are you sure ?"
+        } %>
+    </li>
+</ul>
