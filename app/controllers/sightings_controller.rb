@@ -1,13 +1,25 @@
 class SightingsController < ApplicationController
+    def new
+        @animal = Animal.find(params[:animal_id])
+        @sighting = @animal.sightings.new()
+    end
+
     def create
         @animal = Animal.find(params[:animal_id])
-        @sighting = @animal.sightings.create(sightings_params)
-        redirect_to animal_path(@animal)
+        @sighting = @animal.sightings.new(sightings_params)
+        
+        if @sighting.save
+            redirect_to animal_path(@animal)
+        else 
+            redirect_to new_animal_sighting_path
+        end
     end
+
     def edit
         @animal = Animal.find(params[:animal_id])
         @sighting = @animal.sightings.find(params[:id])
     end
+
     def update
         # if save works -> redirect the animal page
         # if save fails -> redirect the edit form
