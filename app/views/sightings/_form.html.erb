@@ -15,6 +15,10 @@
         <%= form.label :latitude %><br/>
         <%= form.number_field :latitude %>
     <div>
+    </div>
+        <%= form.label :region %><br/>
+        <%= form.select :region, Region.pluck(:region) %>
+    <div>
         <%= form.submit %>
     </div>
 <%end%>
