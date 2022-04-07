@@ -1,16 +1,11 @@
 <%= form_with model: [animal, sighting] do |form|%>
-    <% if @sighting.errors.any? %>
-        <% @sighting.errors.full_messages.each do |error| %>
-            <%= error %>
-        <% end %>
-    <% end %>
     <div>
         <%= form.label :date %><br/>
         <%= form.date_field :date %>
         <ul>
             <% sighting.errors.full_messages_for(:date).each do |message|%>
                 <li>
-                    message        
+                    <%= message %>        
                 </li>
             <% end %>
         </ul>
@@ -20,7 +15,7 @@
         <ul>
             <% sighting.errors.full_messages_for(:longitude).each do |message|%>
                 <li>
-                    message        
+                    <%= message %>         
                 </li>
             <% end %>
         </ul>
