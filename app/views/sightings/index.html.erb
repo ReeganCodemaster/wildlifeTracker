@@ -7,6 +7,10 @@
         <%= form.label :end_date%><br/>
         <%= form.date_field :end_date%>
     </div>
+    <div>
+        <%= form.label :region%><br/>
+        <%= form.select :region, @regions%>
+    </div>
     <%= form.submit "Search"%>
 <%end%>
 
