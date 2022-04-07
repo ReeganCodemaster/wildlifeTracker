@@ -1,0 +1,22 @@
+<%= form_with method: :get do |form| %>
+    <div>
+        <%= form.label :begin_date%><br/>
+        <%= form.date_field :begin_date%>
+    </div>
+    <div>
+        <%= form.label :end_date%><br/>
+        <%= form.date_field :end_date%>
+    </div>
+    <%= form.submit "Search"%>
+<%end%>
+
+<ul>
+<% @sightings.each do |sighting|%>
+    <li>
+        <%= sighting.date %><br/>
+        <%= sighting.latitude %><br/>
+        <%= sighting.longitude %><br/>
+        <%= sighting.region.region %><br/>
+    </li>
+<% end %>
+</ul>
