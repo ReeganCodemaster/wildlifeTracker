@@ -1,6 +1,14 @@
 class SightingsController < ApplicationController
     before_action :set_sighting, only: %i[show edit update destroy]
     before_action :set_animal
+    def index
+        if (params[:begin_date].present? == true) and (params[:end_date].present? == true)
+            begin_date, end_date = params[:begin_date].to_date, params[:end_date].to_date
+            @sightings = @animal.sightings.where(date: begin_date..end_date)
+        else
+            @sightings = @animal.sightings.all
+        end
+    end
 
     def new
         @animal   = Animal.find(params[:animal_id])
