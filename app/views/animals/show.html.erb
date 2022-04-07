@@ -26,4 +26,6 @@
     <%= render @animal.sightings %>
 </ul>
 
-<%= link_to "Create a sighting", new_animal_sighting_path(@animal) %>
+<%= link_to "Create a sighting", new_animal_sighting_path(@animal) %><br/>
+
+<%= link_to "Filter sightings", params[:id].to_s + "/sightings" %>
