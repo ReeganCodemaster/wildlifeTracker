@@ -3,7 +3,7 @@ class SightingsController < ApplicationController
     before_action :set_animal
 
     def index 
-        if (params[:begin_date].present?) and (params[:end_date].present?) or (params[:region_id].present?)
+        if (params[:begin_date].present?) and (params[:end_date].present?)
             begin_date, end_date = params[:begin_date].to_date, params[:end_date].to_date
             @sightings = @animal.sightings.where(date: begin_date..end_date).and(@animal.sightings.where(region_id: params[:region_id]))
         else
