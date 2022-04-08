@@ -1,16 +1,16 @@
 <%= form_with model: region do |form|%>
-    <div>
-        <%= form.label :region%><br/>
-        <%= form.text_field :region%>
-        <ul>
-            <%region.errors.full_messages_for(:region).each do %>
-                <li>
-                    <%= message%>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-    <div>
-        <%= form.submit%>
-    </div>
+  <div>
+    <%= form.label :region%><br/>
+    <%= form.text_field :region%>
+    <ul>
+      <%region.errors.full_messages_for(:region).each do %>
+       <li>
+          <%= message%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <%= form.submit%>
+  </div>
 <% end %>
