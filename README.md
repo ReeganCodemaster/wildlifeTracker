@@ -2,7 +2,7 @@
 
 This project was designed to solve the following problem:
 
-The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest outside of Portland. Before they give the go-ahead, they need to do an environmental impact study. They've asked you and your pair to build an app so that the rangers can report wildlife sightings.
+The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest outside of Portland. Before they give the go-ahead, they need to do an environmental impact study.I have been asked to build an app so that the rangers can report wildlife sightings.
 
 ## Ruby version
 This project usses `ruby 2.7.2`
