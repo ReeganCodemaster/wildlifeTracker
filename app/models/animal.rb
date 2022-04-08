@@ -1,4 +1,4 @@
 class Animal < ApplicationRecord
     has_many :sightings, dependent: :destroy
-    validates :animal , presence: true, length: {minimum: 5}
+    validates :animal , presence: true
 end
