@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was designed to solve the following problem:
 
-Things you may want to cover:
+The Forest Service is considering a proposal from a timber company to clear-cut an old-growth forest outside of Portland. Before they give the go-ahead, they need to do an environmental impact study. They've asked you and your pair to build an app so that the rangers can report wildlife sightings.
 
-* Ruby version
+## Ruby version
+This project usses `ruby 2.7.2`
 
-* System dependencies
+## Rails version
+This project usses `Rails 7.0.2.3`
 
-* Configuration
+## System dependencies
+Sytem dependencies are listed in the `Gemfile`, to install the run `bundle install`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Database initialization
+The database config is the default sqlite3(`3.28.0`), before running the server run all databse migrations with `rails db:migrate`
