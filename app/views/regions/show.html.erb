@@ -1,21 +1,22 @@
 <ul>
-    <li>
-        <%= link_to "Animals", root_path%>
-    </li>
-    <li>
-        <%= link_to "Regions", "/regions"%>
-    </li>
+  <li>
+    <%= link_to "Animals", root_path%>
+  </li>
+  <li>
+    <%= link_to "Regions", "/regions"%>
+  </li>
 </ul>
 <hr length=100%>
+
 <h1><%= @region.region %></h1>
 <ul>
-    <li>
-        <%= link_to "Edit region", edit_region_path%>
-    </li>
-    <li>
-        <%= link_to "Delete region", region_path(@region), data:{
-            turbo_method:"delete",
-            turbo_confirm:"Are you sure ?"
-        } %>
-    </li>
+  <li>
+    <%= link_to "Edit region", edit_region_path%>
+  </li>
+  <li>
+    <%= link_to "Delete region", region_path(@region), data:{
+      turbo_method:"delete",
+      turbo_confirm:"Are you sure ?"
+      } %>
+  </li>
 </ul>
