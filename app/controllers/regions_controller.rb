@@ -32,6 +32,7 @@ class RegionsController < ApplicationController
 
         redirect_to "/regions", status: 303
     end
+    
     private
 
     def set_region
