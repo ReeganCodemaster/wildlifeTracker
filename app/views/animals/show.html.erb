@@ -1,29 +1,29 @@
 <ul>
-    <li>
-        <%= link_to "Animals", root_path%>
-    </li>
-    <li>
-        <%= link_to "Regions", "/regions"%>
-    </li>
+  <li>
+    <%= link_to "Animals", root_path%>
+  </li>
+  <li>
+    <%= link_to "Regions", "/regions"%>
+  </li>
 </ul>
 <hr length=100%>
 
 <h1><%= @animal.animal %></h1>
 <ul>
-    <li>
-        <%= link_to "Edit animal name", edit_animal_path%>
-    </li>
-    <li>
-        <%= link_to "Delete animal", animal_path(@animal), data:{
-            turbo_method:"delete",
-            turbo_confirm:"Are you sure?"
-        }%>
-    </li>
+  <li>
+    <%= link_to "Edit animal name", edit_animal_path%>
+  </li>
+  <li>
+    <%= link_to "Delete animal", animal_path(@animal), data:{
+      turbo_method:"delete",
+      turbo_confirm:"Are you sure?"
+    }%>
+   </li>
 </ul>
 
 <h2>Sightings</h2>
 <ul>
-    <%= render @animal.sightings %>
+  <%= render @animal.sightings %>
 </ul>
 
 <%= link_to "Create a sighting", new_animal_sighting_path(@animal) %><br/>
