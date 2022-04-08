@@ -1,16 +1,16 @@
 <%= form_with model: animal do |form| %>
-    <div>
-        <%= form.label :animal %><br/>
-        <%= form.text_field :animal %><br/>
+  <div>
+    <%= form.label :animal %><br/>
+      <%= form.text_field :animal %><br/>
         <ul>
-            <%animal.errors.full_messages_for(:animal).each do |message| %>
-                <li>
-                    <%= message %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-    <div>
-        <%= form.submit%>
-    </div>
+          <%animal.errors.full_messages_for(:animal).each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <%= form.submit%>
+  </div>
 <% end %>
