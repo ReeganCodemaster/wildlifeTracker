@@ -3,16 +3,16 @@
         <%= link_to "Regions", "/regions"%>
     </li>
 </ul>
-<hr length=100%>
+<hr length=100%/>
+
 <h1>Animals</h1>
 <ul>
-    <% @animals.each do |animal|%>
-        <li>
-            <%= link_to animal.animal, animal%>
-        </li>
-    <% end %>
+  <% @animals.each do |animal|%>
+    <li>
+      <%= link_to animal.animal, animal%>
+    </li>
+  <% end %>
 </ul>
-
 
 <%= link_to "add a new animal", new_animal_path%>
 
