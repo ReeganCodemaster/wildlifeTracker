@@ -5,5 +5,4 @@ class Sighting < ApplicationRecord
   validates :latitude, presence: true , comparison: {greater_than: 0}
   validates :longitude, presence: true , comparison: {greater_than: 0}
   validates :date, presence: true
-
 end
