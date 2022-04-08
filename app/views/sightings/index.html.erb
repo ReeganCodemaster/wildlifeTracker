@@ -1,27 +1,30 @@
 <ul>
-    <li>
-        <%= link_to "Regions", "/regions"%>
-    </li>
-    <li>
-        <%= link_to "Animals", "/animals"%>
-    </li>
+  <li>
+   <%= link_to "Regions", "/regions"%>
+  </li>
+  <li>
+    <%= link_to "Animals", "/animals"%>
+  </li>
 </ul>
 <hr length=100%>
+
 <h1>Animals</h1>
 <%= form_with method: :get do |form| %>
-    <div>
-        <%= form.label :begin_date%><br/>
-        <%= form.date_field :begin_date%>
-    </div>
-    <div>
-        <%= form.label :end_date%><br/>
-        <%= form.date_field :end_date%>
-    </div>
-    <div>
-        <%= form.label :region_id%><br/>
-        <%= form.select :region_id, Region.pluck(:region, :id)%>
-    </div>
+  <div>
+    <%= form.label :begin_date%><br/>
+    <%= form.date_field :begin_date%>
+  </div>
+  <div>
+    <%= form.label :end_date%><br/>
+    <%= form.date_field :end_date%>
+  </div>
+  <div>
+    <%= form.label :region_id%><br/>
+    <%= form.select :region_id, Region.pluck(:region, :id)%>
+  </div>
+  <div>
     <%= form.submit "Search"%>
+  </div>
 <%end%>
 
 <ul>
