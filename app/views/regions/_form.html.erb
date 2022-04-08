@@ -2,6 +2,13 @@
     <div>
         <%= form.label :region%><br/>
         <%= form.text_field :region%>
+        <ul>
+            <%region.errors.full_messages_for(:region).each do %>
+                <li>
+                    <%= message%>
+                </li>
+            <% end %>
+        </ul>
     </div>
     <div>
         <%= form.submit%>
