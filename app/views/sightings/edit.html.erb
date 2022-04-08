@@ -1,15 +1,14 @@
 <ul>
-    <li>
-        <%= link_to "Regions", "/regions"%>
-    </li>
-    <li>
-        <%= link_to "Animals", "/animals"%>
-    </li>
+  <li>
+    <%= link_to "Regions", "/regions"%>
+  </li>
+  <li>
+    <%= link_to "Animals", "/animals"%>
+  </li>
 </ul>
 <hr length=100%>
-<h1>Animals</h1>
 
 <h2>Edit sighting:</h2>
 
 <%= render "form",{animal:@animal,
-                    sighting:@sighting}%>
+  sighting:@sighting}%>
