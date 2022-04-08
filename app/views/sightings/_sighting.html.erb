@@ -1,21 +1,21 @@
 <li>
-    <p>
-        <strong> <%= sighting.date%> </strong><br/>
-        <strong> longitude: <%= sighting.longitude %> </strong><br/>
-        <strong> latitude: <%= sighting.latitude %> </strong><br/>
-        <strong> region: <%= sighting.region.region %> </strong><br/>
-    </p>
-    <ul>   
-        <li>
-            <%= link_to "Delete sighting",[sighting.animal, sighting],data:{
-                turbo_method:"delete",
-                turb_confirm:"Are you sure?"
-            } %>
-        </li>
-        <li>
-            <%= link_to "Edit sighting", edit_animal_sighting_path(params[:id], sighting.id) %>
-        </li>
-    </ul>
+  <p>
+    <strong> <%= sighting.date%> </strong><br/>
+    <strong> longitude: <%= sighting.longitude %> </strong><br/>
+    <strong> latitude: <%= sighting.latitude %> </strong><br/>
+    <strong> region: <%= sighting.region.region %> </strong><br/>
+  </p>
+  <ul>   
+    <li>
+      <%= link_to "Delete sighting",[sighting.animal, sighting],data:{
+        turbo_method:"delete",
+        turb_confirm:"Are you sure?"
+        } %>
+    </li>
+    <li>
+      <%= link_to "Edit sighting", edit_animal_sighting_path(params[:id], sighting.id) %>
+    </li>
+  </ul>
 
 
 </li>
