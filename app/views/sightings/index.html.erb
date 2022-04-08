@@ -8,8 +8,8 @@
         <%= form.date_field :end_date%>
     </div>
     <div>
-        <%= form.label :region%><br/>
-        <%= form.select :region, @regions%>
+        <%= form.label :region_id%><br/>
+        <%= form.select :region_id, Region.pluck(:region, :id)%>
     </div>
     <%= form.submit "Search"%>
 <%end%>
