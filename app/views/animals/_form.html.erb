@@ -3,9 +3,9 @@
         <%= form.label :animal %><br/>
         <%= form.text_field :animal %><br/>
         <ul>
-            <%animal.errors.full_messages_for(:animal).each do %>
+            <%animal.errors.full_messages_for(:animal).each do |message| %>
                 <li>
-                    <%= message%>
+                    <%= message %>
                 </li>
             <% end %>
         </ul>
